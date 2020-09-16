@@ -16,3 +16,5 @@ networks:
 ```sh
 cp docker-compose-sample.yml docker-compose.yml && cp traefik-sample.toml traefik.toml
 ```
+## その他機能
+portainerというweb uiでdockerを管理するツールがついています。portainer.localhostでアクセスできます。
