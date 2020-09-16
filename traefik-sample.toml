@@ -1,0 +1,8 @@
+[api]
+
+[ping]
+  entryPoint = "http"
+
+[providers.docker]
+  network = "docker_default"
+  defaultRule = "Host(`{{ trimSuffix \"-\" (regexFind \"(.+?)-\" .Name) }}.localhost`)"
