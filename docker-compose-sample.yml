@@ -3,6 +3,8 @@ services:
   portainer:
     image: portainer/portainer-ce
     restart: always
+    labels:
+      - "traefik.http.services.portainer.loadbalancer.server.port=9000"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./portainer:/data
