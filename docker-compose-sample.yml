@@ -12,6 +12,7 @@ services:
     image: traefik
     ports:
       - "80:80"
+      - "443:443"
     restart: always
     labels:
       - "traefik.http.routers.api.rule=Host(`traefik.localhost`)"
