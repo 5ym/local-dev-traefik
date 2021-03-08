@@ -1,7 +1,10 @@
 [api]
 
-[ping]
-  entryPoint = "http"
+[entryPoints]
+  [entryPoints.web]
+    address = ":80"
+  [entryPoints.websecure]
+    address = ":443"
 
 [providers.docker]
   network = "docker_default"
