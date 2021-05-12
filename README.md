@@ -1,8 +1,10 @@
 # local-dev-traefik
-## 説明
-ローカル開発環境でtraefikに名前解決されることで開発環境ごとのポート管理等の手間を省くためのものこれをdockerフォルダに入れるかstack名称をdockerにするかして立ち上げる  
-下記のような記述をdocker-compose.ymlに追加し名前解決させたいコンテナをそのネットワークに参加させる  
-名前解決ルールはコンテナ名称が`hoge-fuga`だった場合`hoge.localhost`のようにハイフンより前が正規表現で切り取られてネーミングされる
+
+## Description
+
+This is to save you the trouble of managing ports for each development environment by resolving names to traefik in the local development environment.  
+Add the following description to docker-compose.yml and add the containers you want to resolve to the network.  
+In the name resolution rule, if the name of the container is `hoge-fuga`, it will be named like `hoge.localhost` with the regular expression truncated before the hyphen.
 
 ```yml
 networks:
@@ -10,11 +12,15 @@ networks:
     external: true
     name: docker_default
 ```
-## 使い方
-下記のようなコマンドでサンプルをコピーし適宜カスタマイズして立ち上げる
+## How to use
+
+Use the following command to copy the sample, customize it as necessary, and launch it
 
 ```sh
+git clone https://github.com/5ym/Local-Dev-Traefik.git
+mv Local-Dev-Traefik docker && cd docker
 cp docker-compose-sample.yml docker-compose.yml && cp traefik-sample.toml traefik.toml
 ```
-## その他機能
-portainerというweb uiでdockerを管理するツールがついています。portainer.localhostでアクセスできます。
+## Other functions
+
+It comes with portainer, a tool for managing docker via web ui, which can be accessed via portainer.localhost.
