@@ -12,15 +12,15 @@ networks:
     external: true
     name: docker_default
 ```
+
 ## How to use
 
 Use the following command to copy the sample, customize it as necessary, and launch it
 
 ```sh
-git clone https://github.com/5ym/Local-Dev-Traefik.git
-mv Local-Dev-Traefik docker && cd docker
-cp docker-compose-sample.yml docker-compose.yml && cp traefik-sample.toml traefik.toml
+curl -sf https://raw.githubusercontent.com/5ym/Local-Dev-Traefik/master/init.sh | sh -s
 ```
+
 ## Other functions
 
 It comes with portainer, a tool for managing docker via web ui, which can be accessed via portainer.localhost.
